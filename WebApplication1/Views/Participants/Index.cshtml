@@ -25,8 +25,7 @@
                 <th>Id</th>
                 <th>Vorname</th>
                 <th>Nachname</th>
-                <th>Email</th>
-                <th>Webseite</th>
+                <th>Kontakt</th>
                 <th>Firma</th>
             </tr>
 
@@ -36,8 +35,14 @@
                     <td>@p.Id</td>
                     <td>@p.Firstname</td>
                     <td>@p.Lastname</td>
-                    <td>@p.Email</td>
-                    <td>@p.Website</td>
+                    <td>
+                        <a href="mailto: @p.Email">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </a>
+                        <a href="@p.Website" target="_blank">
+                            <span class="glyphicon glyphicon-link"></span>
+                        </a>
+                    </td>
                     <td>@p.Company</td>
                 </tr>
             }

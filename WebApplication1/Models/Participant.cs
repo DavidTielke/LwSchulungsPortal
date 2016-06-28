@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -16,12 +18,13 @@ namespace WebApplication1.Models
             Website = website;
             Company = company;
         }
+        
 
         public Participant()
         {
             
         }
-
+        
         public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
