@@ -4,21 +4,29 @@
     }
 
 <table class="table table-striped table-bordered table-condensed">
+
     <tr>
-        <th>Id</th>
-        <th>Vorname</th>
-        <th>Nachname</th>
+        <th class="visible-lg visible-md">Id</th>
+        <th class="hidden-xs">Vorname</th>
+        <th class="hidden-xs">Nachname</th>
+        <th class="visible-xs">
+            Name
+        </th>
         <th>Kontakt</th>
-        <th>Firma</th>
-        <th>Optionen</th>
+        <th class="visible-lg visible-md">Firma</th>
+        <th>
+            <span class="hidden-xs">Optionen</span>
+            <span class="visible-xs">Opt.</span>
+        </th>
     </tr>
 
     @foreach (var p in Model.Participants)
-            {
+    {
         <tr>
-            <td>@p.Id</td>
-            <td>@p.Firstname</td>
-            <td>@p.Lastname</td>
+            <td class="visible-lg visible-md">@p.Id</td>
+            <td class="hidden-xs">@p.Firstname</td>
+            <td class="hidden-xs">@p.Lastname</td>
+            <td class="visible-xs">@p.Firstname @p.Lastname</td>
             <td>
                 <a href="mailto: @p.Email">
                     <span class="glyphicon glyphicon-envelope"></span>
@@ -27,7 +35,7 @@
                     <span class="glyphicon glyphicon-link"></span>
                 </a>
             </td>
-            <td>@p.Company</td>
+            <td class="visible-lg visible-md">@p.Company</td>
             <td><a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
                 <span class="glyphicon glyphicon-trash"></span>
             </a></td>
