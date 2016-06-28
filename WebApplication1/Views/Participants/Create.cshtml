@@ -5,8 +5,18 @@
 
 @using (Html.BeginForm())
 {
-    <div>
-        @Html.EditorForModel()
+    <div class="row">
+        <fieldset class="col-md-6">
+            <legend>Person</legend>
+            @Html.EditorFor(m => m.Firstname)
+            @Html.EditorFor(m => m.Lastname)
+            @Html.EditorFor(m => m.Email)
+        </fieldset>
+        <fieldset class="col-md-6">
+            <legend>Geschäftlich</legend>
+            @Html.EditorFor(m => m.Website)
+            @Html.EditorFor(m => m.Company)
+        </fieldset>
     </div>
     <input type="submit" value="Hinzufügen"/>
 }

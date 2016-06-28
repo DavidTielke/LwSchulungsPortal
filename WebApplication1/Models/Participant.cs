@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -26,10 +27,20 @@ namespace WebApplication1.Models
         }
         
         public int Id { get; set; }
+
+        [DisplayName("Vorname")]
         public string Firstname { get; set; }
+
+        [DisplayName("Nachname")]
         public string Lastname { get; set; }
+
+        [DisplayName("Email")]
         public string Email { get; set; }
+
+        [DisplayName("Webseite")]
         public string Website { get; set; }
+
+        [DisplayName("Firma")]
         public string Company { get; set; }
     }
 }
