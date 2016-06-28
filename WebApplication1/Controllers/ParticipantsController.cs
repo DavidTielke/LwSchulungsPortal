@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Data;
+using WebApplication1.Models;
 using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
@@ -27,6 +28,19 @@ namespace WebApplication1.Controllers
             };
 
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Participant model)
+        {
+            _repository.Insert(model);
+            return RedirectToAction("Index");
         }
     }
 }

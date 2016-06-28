@@ -14,7 +14,7 @@ namespace WebApplication1.Data
         public TpContext()
             : base("name=TpContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<TpContext>());
+            Database.SetInitializer(new TpDatabaseInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -23,5 +23,16 @@ namespace WebApplication1.Data
         }
 
         public DbSet<Participant> Participants { get; set; }
+    }
+
+    public class TpDatabaseInitializer : DropCreateDatabaseAlways<TpContext>
+    {
+        protected override void Seed(TpContext context)
+        {
+            context.Participants.Add(new Participant(1, "David", "Tielke", "mail@david-tielke.de", "http://www.David-Tielke.de", "www.David-Tielke.de"));
+            context.Participants.Add(new Participant(2, "Golo", "Roden", "webmaster@goloroden.de", "http://www.thenativeweb.de", "theNativeWeb"));
+            context.Participants.Add(new Participant(3, "Laurin", "Stoll", "l.stoll@yooapps.ch", "http://www.yooapps.ch", "youuapps AG"));
+            context.Participants.Add(new Participant(4, "Christian", "Giesswein", "info@giessweinweb.at", "http://www.giessweinweb.at", "Giesswein Apps"));
+        }
     }
 }

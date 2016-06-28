@@ -16,5 +16,11 @@ namespace WebApplication1.Data
         }
 
         public IQueryable<Participant> Query => _database.Participants;
+
+        public void Insert(Participant participant)
+        {
+            _database.Participants.Add(participant);
+            _database.SaveChanges();
+        }
     }
 }

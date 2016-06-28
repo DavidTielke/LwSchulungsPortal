@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.Participant
+
+<h2>Neuen Teilnehmer hinzufügen</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.EditorForModel()
+    </div>
+    <input type="submit" value="Hinzufügen"/>
+}
