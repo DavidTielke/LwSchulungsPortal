@@ -22,5 +22,18 @@ namespace WebApplication1.Data
             _database.Participants.Add(participant);
             _database.SaveChanges();
         }
+
+        public Participant GetById(int id)
+        {
+            var participant = _database.Participants.Find(id);
+            return participant;
+        }
+
+        public void Delete(int id)
+        {
+            var item = GetById(id);
+            _database.Participants.Remove(item);
+            _database.SaveChanges();
+        }
     }
 }

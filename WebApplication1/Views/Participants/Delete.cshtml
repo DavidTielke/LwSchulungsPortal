@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.Participant
+
+@{
+    ViewBag.Title = $"Teilnehmer {Model.Firstname} {Model.Lastname} löschen?";
+}
+
+<div class="text-warning">Wollen Sie den Teilnehmer @Model.Firstname @Model.Lastname wirklich löschen?</div>
+<div class="pull-right">
+    <a class="btn btn-default" href="@Url.Action("Index","Participants")">Abbrechen</a>
+    <a class="btn btn-primary" href="@Url.Action("DeleteConfirmed","Participants", new {id = Model.Id})">Löschen</a>
+</div>

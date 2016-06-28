@@ -10,6 +10,7 @@
         <th>Nachname</th>
         <th>Kontakt</th>
         <th>Firma</th>
+        <th>Optionen</th>
     </tr>
 
     @foreach (var p in Model.Participants)
@@ -27,6 +28,9 @@
                 </a>
             </td>
             <td>@p.Company</td>
+            <td><a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a></td>
         </tr>
     }
 
