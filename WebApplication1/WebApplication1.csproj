@@ -143,6 +143,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Participants\Delete.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Participants\Update.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

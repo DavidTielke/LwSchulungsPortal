@@ -1,19 +1,21 @@
 ﻿@model WebApplication1.Models.Participant
-    @{
-        ViewBag.Title = "Neuen Teilnehmer hinzufügen";
-    }
 
+@{
+    ViewBag.Title = $"Teilnehmer {Model.Firstname} {Model.Lastname} editieren";
+}
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(m => m.Id)
+
     if (!ViewData.ModelState.IsValid)
-     {
-         <div class="panel panel-danger">
-             <div class="panel-heading">Eingabefehler</div>
-             <div class="panel-body text-danger">
-                 @Html.ValidationSummary(false)
-             </div>
-         </div>
-     }
+    {
+        <div class="panel panel-danger">
+            <div class="panel-heading">Eingabefehler</div>
+            <div class="panel-body text-danger">
+                @Html.ValidationSummary(false)
+            </div>
+        </div>
+    }
 
     <div class="row">
         <fieldset class="col-md-6">
@@ -28,5 +30,5 @@
             @Html.EditorFor(m => m.Company)
         </fieldset>
     </div>
-    <input type="submit" value="Hinzufügen"/>
+    <input type="submit" value="Bearbeiten" />
 }

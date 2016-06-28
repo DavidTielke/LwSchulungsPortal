@@ -49,6 +49,24 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        public ActionResult Update(int id)
+        {
+            var participant = _repository.GetById(id);
+            return View(participant);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Participant model)
+        {
+            var isValid = ModelState.IsValid;
+            if (isValid)
+            {
+                _repository.Update(model);
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
         public ActionResult Delete(int id)
         {
             var model = _repository.GetById(id);

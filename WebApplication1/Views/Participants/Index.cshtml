@@ -1,7 +1,7 @@
 ﻿@model ParticipantsIndexViewModel
-    @{
-        ViewBag.Title = "Alle Teilnehmer";
-    }
+@{
+    ViewBag.Title = "Alle Teilnehmer";
+}
 
 <table class="table table-striped table-bordered table-condensed">
 
@@ -36,9 +36,14 @@
                 </a>
             </td>
             <td class="visible-lg visible-md">@p.Company</td>
-            <td><a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
-                <span class="glyphicon glyphicon-trash"></span>
-            </a></td>
+            <td>
+                <a href="@Url.Action("Update", "Participants", new {id = p.Id})">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
         </tr>
     }
 

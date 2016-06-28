@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WebApplication1.Models;
@@ -33,6 +34,19 @@ namespace WebApplication1.Data
         {
             var item = GetById(id);
             _database.Participants.Remove(item);
+            _database.SaveChanges();
+        }
+
+        public void Update(Participant model)
+        {
+            //if (_database.Entry(model).State == EntityState.Detached)
+            //{
+            //    _database.Participants.Attach(model);
+            //    _database.Entry(model).State = EntityState.Modified;
+            //}
+
+            _database.Entry(model).State = EntityState.Modified;
+
             _database.SaveChanges();
         }
     }
