@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trainingsportal - @ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hallo Welt!</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Create")">Neu</a></li>
+            </ul>
+        </nav>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="well text-center">
+            Copyright &copy; 2016 by Sigthorson
+        </footer>
+    </div>
+</body>
+</html>
