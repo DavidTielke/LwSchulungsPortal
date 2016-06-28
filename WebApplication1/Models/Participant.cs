@@ -29,18 +29,28 @@ namespace WebApplication1.Models
         public int Id { get; set; }
 
         [DisplayName("Vorname")]
+        [Required]
+        [MinLength(3)]
         public string Firstname { get; set; }
 
         [DisplayName("Nachname")]
+        [Required]
+        [MinLength(3)]
         public string Lastname { get; set; }
 
         [DisplayName("Email")]
+        [Required]
+        [MinLength(5)]
         public string Email { get; set; }
 
         [DisplayName("Webseite")]
+        [Required]
+        [MinLength(10)]
         public string Website { get; set; }
 
         [DisplayName("Firma")]
+        [Required]
+        [MinLength(3)]
         public string Company { get; set; }
     }
 }

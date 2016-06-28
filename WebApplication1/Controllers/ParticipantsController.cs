@@ -40,8 +40,13 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Create(Participant model)
         {
-            _repository.Insert(model);
-            return RedirectToAction("Index");
+            var isModelValid = ModelState.IsValid;
+            if (isModelValid)
+            {
+                _repository.Insert(model);
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
 
         public ActionResult Delete(int id)

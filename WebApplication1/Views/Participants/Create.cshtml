@@ -5,6 +5,13 @@
 
 @using (Html.BeginForm())
 {
+    <div class="panel panel-danger">
+        <div class="panel-heading">Eingabefehler</div>
+        <div class="panel-body text-danger">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+
     <div class="row">
         <fieldset class="col-md-6">
             <legend>Person</legend>
