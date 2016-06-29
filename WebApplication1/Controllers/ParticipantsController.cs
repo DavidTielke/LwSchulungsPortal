@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index(int page = 1)
         {
-            var pageSize = 2;
+            var pageSize = 3;
             var viewModel = new ParticipantsIndexViewModel
             {
                 Participants = _repository.Query.OrderBy(p => p.Id).Skip((page - 1) * pageSize).Take(pageSize).ToList(),
