@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = $"Teilnehmer {Model.Firstname} {Model.Lastname} editieren";
 }
+
+@section ModuleMenu
+{
+    @Html.Partial("ParticipantsMenu", Model.Id)
+}
+
+
 @using (Html.BeginForm("Update", "Participants", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.HiddenFor(m => m.Id)

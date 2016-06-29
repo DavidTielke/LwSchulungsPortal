@@ -161,6 +161,7 @@
     <Content Include="Views\Participants\Update.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
     <Content Include="Views\Participants\CardIndex.cshtml" />
+    <Content Include="Views\Shared\ParticipantsMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

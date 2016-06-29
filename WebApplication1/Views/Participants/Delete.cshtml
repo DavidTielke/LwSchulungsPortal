@@ -4,6 +4,11 @@
     ViewBag.Title = $"Teilnehmer {Model.Firstname} {Model.Lastname} löschen?";
 }
 
+@section ModuleMenu
+{
+    @Html.Partial("ParticipantsMenu", Model.Id)
+}
+
 <div class="text-warning">Wollen Sie den Teilnehmer @Model.Firstname @Model.Lastname wirklich löschen?</div>
 <div class="pull-right">
     <a class="btn btn-default" href="@Url.Action("Index","Participants")">Abbrechen</a>

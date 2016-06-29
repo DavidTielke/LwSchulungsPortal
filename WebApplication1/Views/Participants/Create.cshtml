@@ -3,6 +3,12 @@
         ViewBag.Title = "Neuen Teilnehmer hinzufügen";
     }
 
+@section ModuleMenu
+{
+    @Html.Partial("ParticipantsMenu", 0)
+}
+
+
 @using (Html.BeginForm("Create","Participants",FormMethod.Post, new {enctype="multipart/form-data"}))
 {
     if (!ViewData.ModelState.IsValid)
