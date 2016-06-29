@@ -14,5 +14,6 @@ namespace WebApplication1.ViewModels
         }
 
         public List<Participant> Participants { get; set; }
+        public PaginationViewModel Pagination { get; set; }
     }
 }

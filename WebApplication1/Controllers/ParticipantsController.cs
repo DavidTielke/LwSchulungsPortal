@@ -21,22 +21,40 @@ namespace WebApplication1.Controllers
             _repository = new ParticipantsRepository();
         }
 
-        public ActionResult CardIndex()
+        public ActionResult CardIndex(int page = 1)
         {
+            var pageSize = 2;
+
             var viewModel = new ParticipantsIndexViewModel
             {
-                Participants = _repository.Query.ToList()
+                Participants = _repository.Query.OrderBy(p => p.Id).Skip((page-1)*pageSize).Take(pageSize).ToList(),
+                Pagination = new PaginationViewModel
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalCount = _repository.Query.Count(),
+                    Controller = RouteData.Values["Controller"] as string,
+                    Action = RouteData.Values["Action"] as string
+                }
             };
 
             return View(viewModel);
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-
+            var pageSize = 2;
             var viewModel = new ParticipantsIndexViewModel
             {
-                Participants = _repository.Query.ToList()
+                Participants = _repository.Query.OrderBy(p => p.Id).Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                Pagination = new PaginationViewModel
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalCount = _repository.Query.Count(),
+                    Controller = RouteData.Values["Controller"] as string,
+                    Action = RouteData.Values["Action"] as string
+                }
             };
 
             return View(viewModel);
