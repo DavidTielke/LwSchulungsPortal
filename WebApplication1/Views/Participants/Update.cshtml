@@ -26,7 +26,8 @@
 
             <div class="form-group">
                 <label for="upload">Avatar: </label>
-                <input type="file" name="upload" id="upload" />
+                <input type="file" name="upload" id="upload"/>
+                <img src="@Url.Action("ProfileImage", new {id = Model.Id})" alt="Profilfoto" width="200"/>
             </div>
         </fieldset>
         <fieldset class="col-md-6">

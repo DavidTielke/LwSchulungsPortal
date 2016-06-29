@@ -63,5 +63,7 @@ namespace WebApplication1.Models
 
         [UIHint("File")]
         public byte[] ProfilePicture { get; set; }
+
+        public string ProfilePictureContentType { get; set; }
     }
 }

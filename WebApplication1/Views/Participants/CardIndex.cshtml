@@ -1,0 +1,29 @@
+﻿@model ParticipantsIndexViewModel
+
+@{
+    ViewBag.Title = "Alle Teilnehmer (Card)";
+}
+
+@for (int index = 0; index < Model.Participants.Count; index++)
+{
+    <div class="row">
+        @for (int u = 0; u < 3; u++, index++)
+        {
+            var participant = Model.Participants[index];
+            <div class="col-md-3 participantCard">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="@Url.Action("ProfileImage", new {id = participant.Id})"/>
+                    </div>
+                    <div class="col-md-7">
+                        <h1>@participant.Firstname @participant.Lastname</h1>
+                        <p>@participant.Company</p>
+                        <p>@participant.Website</p>
+                        <p>@participant.Email</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        }
+    </div>
+}

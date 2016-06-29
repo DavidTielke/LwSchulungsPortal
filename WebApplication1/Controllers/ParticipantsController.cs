@@ -21,6 +21,16 @@ namespace WebApplication1.Controllers
             _repository = new ParticipantsRepository();
         }
 
+        public ActionResult CardIndex()
+        {
+            var viewModel = new ParticipantsIndexViewModel
+            {
+                Participants = _repository.Query.ToList()
+            };
+
+            return View(viewModel);
+        }
+
         public ActionResult Index()
         {
 
@@ -49,6 +59,7 @@ namespace WebApplication1.Controllers
                     using (var reader = new BinaryReader(upload.InputStream))
                     {
                         model.ProfilePicture = reader.ReadBytes(upload.ContentLength);
+                        model.ProfilePictureContentType = upload.ContentType;
                     }
                 }
 
@@ -75,6 +86,7 @@ namespace WebApplication1.Controllers
                     using (var reader = new BinaryReader(upload.InputStream))
                     {
                         model.ProfilePicture = reader.ReadBytes(upload.ContentLength);
+                        model.ProfilePictureContentType = upload.ContentType;
                     }
                 }
 
@@ -94,6 +106,18 @@ namespace WebApplication1.Controllers
         {
             _repository.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ProfileImage(int id)
+        {
+            var participant = _repository.GetById(id);
+            var profileImageData = participant.ProfilePicture;
+
+            if (profileImageData == null || profileImageData.Length == 0)
+            {
+                return File("~/Content/noprofile.png", "image/png");
+            }
+            return File(profileImageData, participant.ProfilePictureContentType);
         }
     }
 }

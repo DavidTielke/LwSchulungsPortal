@@ -101,6 +101,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\noprofile.png" />
+    <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -135,6 +137,10 @@
     <Compile Include="Migrations\201606290714594_ProfilePictureAdded.Designer.cs">
       <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.cs" />
+    <Compile Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.Designer.cs">
+      <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,6 +160,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Participants\Update.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
+    <Content Include="Views\Participants\CardIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606290714594_ProfilePictureAdded.resx">
       <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.resx">
+      <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

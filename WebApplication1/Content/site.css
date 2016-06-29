@@ -1,0 +1,23 @@
+﻿.participantCard {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px;
+    font-size: 80%;
+    height: 160px;
+}
+
+.participantCard h1 {
+    font-size: 150%;
+}
+
+.participantCard img {
+    max-height: 150px;
+    max-width: 100px;
+    line-height: 150px;
+    vertical-align: central;
+}
+
+.participantCard p {
+    margin-bottom:3px;
+}
