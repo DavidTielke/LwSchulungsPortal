@@ -19,7 +19,15 @@ namespace WebApplication1.Models
             Website = website;
             Company = company;
         }
-        
+
+        public Participant(string firstname, string lastname, string email, string website, string company)
+        {
+            Firstname = firstname;
+            Lastname = lastname;
+            Email = email;
+            Website = website;
+            Company = company;
+        }
 
         public Participant()
         {
@@ -52,5 +60,7 @@ namespace WebApplication1.Models
         [Required]
         [MinLength(3)]
         public string Company { get; set; }
+
+        public byte[] ProfilePicture { get; set; }
     }
 }
