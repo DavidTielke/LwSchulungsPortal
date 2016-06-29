@@ -61,6 +61,7 @@ namespace WebApplication1.Models
         [MinLength(3)]
         public string Company { get; set; }
 
+        [UIHint("File")]
         public byte[] ProfilePicture { get; set; }
     }
 }

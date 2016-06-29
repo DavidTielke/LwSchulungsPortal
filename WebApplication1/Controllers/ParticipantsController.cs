@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,11 +39,19 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Participant model)
+        public ActionResult Create(Participant model, HttpPostedFileBase upload)
         {
             var isModelValid = ModelState.IsValid;
             if (isModelValid)
             {
+                if (upload != null && upload.ContentLength != 0)
+                {
+                    using (var reader = new BinaryReader(upload.InputStream))
+                    {
+                        model.ProfilePicture = reader.ReadBytes(upload.ContentLength);
+                    }
+                }
+
                 _repository.Insert(model);
                 return RedirectToAction("Index");
             }
@@ -56,11 +65,19 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(Participant model)
+        public ActionResult Update(Participant model, HttpPostedFileBase upload)
         {
             var isValid = ModelState.IsValid;
             if (isValid)
             {
+                if (upload != null && upload.ContentLength != 0)
+                {
+                    using (var reader = new BinaryReader(upload.InputStream))
+                    {
+                        model.ProfilePicture = reader.ReadBytes(upload.ContentLength);
+                    }
+                }
+
                 _repository.Update(model);
                 return RedirectToAction("Index");
             }

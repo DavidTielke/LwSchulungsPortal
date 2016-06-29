@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = $"Teilnehmer {Model.Firstname} {Model.Lastname} editieren";
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm("Update", "Participants", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.HiddenFor(m => m.Id)
 
@@ -22,12 +22,18 @@
             <legend>Person</legend>
             @Html.EditorFor(m => m.Firstname)
             @Html.EditorFor(m => m.Lastname)
-            @Html.EditorFor(m => m.Email)
+
+
+            <div class="form-group">
+                <label for="upload">Avatar: </label>
+                <input type="file" name="upload" id="upload" />
+            </div>
         </fieldset>
         <fieldset class="col-md-6">
             <legend>Geschäftlich</legend>
             @Html.EditorFor(m => m.Website)
-            @Html.EditorFor(m => m.Company)
+                        @Html.EditorFor(m => m.Company)
+                        @Html.EditorFor(m => m.Email)
         </fieldset>
     </div>
     <input type="submit" value="Bearbeiten" />

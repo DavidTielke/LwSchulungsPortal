@@ -1,0 +1,7 @@
+﻿@model byte[]
+
+<div class="form-group">
+    <label for="@Html.IdForModel()">@Html.DisplayNameForModel()</label>
+    <input type="file" name="@Html.NameForModel()" id="@Html.IdForModel()" value="@Html.ValueForModel()" class="form-control" />
+    <div class="text-danger">@Html.ValidationMessageFor(m => m)</div>
+</div>

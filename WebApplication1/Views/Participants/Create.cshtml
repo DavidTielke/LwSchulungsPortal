@@ -3,7 +3,7 @@
         ViewBag.Title = "Neuen Teilnehmer hinzufügen";
     }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create","Participants",FormMethod.Post, new {enctype="multipart/form-data"}))
 {
     if (!ViewData.ModelState.IsValid)
      {
@@ -20,12 +20,17 @@
             <legend>Person</legend>
             @Html.EditorFor(m => m.Firstname)
             @Html.EditorFor(m => m.Lastname)
-            @Html.EditorFor(m => m.Email)
+
+            <div class="form-group">
+                <label for="upload">Avatar: </label>
+                <input type="file" name="upload" id="upload"/>
+            </div>
         </fieldset>
         <fieldset class="col-md-6">
             <legend>Geschäftlich</legend>
             @Html.EditorFor(m => m.Website)
-            @Html.EditorFor(m => m.Company)
+                        @Html.EditorFor(m => m.Company)
+                        @Html.EditorFor(m => m.Email)
         </fieldset>
     </div>
     <input type="submit" value="Hinzufügen"/>
