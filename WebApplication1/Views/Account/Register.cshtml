@@ -8,8 +8,12 @@
 <h1 style="margin-bottom: 30px; margin-top: 20px;">Registrieren</h1>
 @using (Html.BeginForm())
 {
-    @Html.EditorFor(m => m.Email)
-    @Html.EditorFor(m => m.Password)
+    @Html.EditorFor(m => m.Participant.Firstname)
+    @Html.EditorFor(m => m.Participant.Lastname)
+    @Html.EditorFor(m => m.Participant.Email)
+    @Html.EditorFor(m => m.Participant.Website)
+    @Html.EditorFor(m => m.Participant.Company)
+    @Html.EditorFor(m => m.Participant.Password)
     @Html.EditorFor(m => m.PasswordRepeat)
     <button type="submit" name="submit" class="btn btn-primary btn-block" style="margin-top: 30px;">Registrieren</button>
 }

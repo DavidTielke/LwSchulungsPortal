@@ -132,27 +132,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="fonts\Migrations\201606281435445_InitialCreate.cs" />
-    <Compile Include="fonts\Migrations\201606281435445_InitialCreate.Designer.cs">
-      <DependentUpon>201606281435445_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201606300948299_PasswordForPart.cs" />
+    <Compile Include="Migrations\201606300948299_PasswordForPart.Designer.cs">
+      <DependentUpon>201606300948299_PasswordForPart.cs</DependentUpon>
     </Compile>
-    <Compile Include="fonts\Migrations\201606290714594_ProfilePictureAdded.cs" />
-    <Compile Include="fonts\Migrations\201606290714594_ProfilePictureAdded.Designer.cs">
-      <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.cs" />
-    <Compile Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.Designer.cs">
-      <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fonts\Migrations\201606291421081_Links.cs" />
-    <Compile Include="fonts\Migrations\201606291421081_Links.Designer.cs">
-      <DependentUpon>201606291421081_Links.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fonts\Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IIdentifyableEntity.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Sha1Hasher.cs" />
     <Compile Include="ViewModels\AccountLoginViewModel.cs" />
     <Compile Include="ViewModels\AccountRegisterViewModel.cs" />
     <Compile Include="ViewModels\LinkIndexViewModel.cs" />
@@ -198,17 +187,8 @@
     <Folder Include="Views\Participants\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="fonts\Migrations\201606281435445_InitialCreate.resx">
-      <DependentUpon>201606281435445_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fonts\Migrations\201606290714594_ProfilePictureAdded.resx">
-      <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.resx">
-      <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fonts\Migrations\201606291421081_Links.resx">
-      <DependentUpon>201606291421081_Links.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606300948299_PasswordForPart.resx">
+      <DependentUpon>201606300948299_PasswordForPart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

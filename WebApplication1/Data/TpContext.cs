@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WebApplication1.Data.Mappings;
-using WebApplication1.Migrations;
 using WebApplication1.Models;
 
 namespace WebApplication1.Data
@@ -15,7 +14,7 @@ namespace WebApplication1.Data
         public TpContext()
             : base("name=TpContext")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TpContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TpContext, Configuration>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
