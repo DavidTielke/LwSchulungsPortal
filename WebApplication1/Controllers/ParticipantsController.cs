@@ -11,7 +11,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    // localhost.de/Participants/Delete
+    [Authorize]
     public class ParticipantsController : Controller
     {
         private readonly Repository<Participant> _repository;

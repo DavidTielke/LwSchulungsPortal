@@ -23,7 +23,17 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1><span class="glyphicon glyphicon-education"></span> Trainingsportal</h1>
+            <div class="row">
+                <div class="col-xs-8">
+                    <h1>
+                        <span class="glyphicon glyphicon-education"></span> Trainingsportal
+                    </h1>
+                </div>
+                <div class="col-xs-4">
+                    <span>Eingeloggt als: @this.User.Identity.Name</span> <a href="@Url.Action("Logoff","Account")"> <span class="glyphicon glyphicon-log-out"></span></a>
+                </div>
+            </div>
+
         </div>
 
         <nav class="navbar navbar-default">

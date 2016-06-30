@@ -9,6 +9,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class LinksController : Controller
     {
         private readonly Repository<Link> _repository;
@@ -24,7 +25,7 @@ namespace WebApplication1.Controllers
 
             var viewModel = new LinkIndexViewModel
             {
-                Links = _repository.Query.OrderBy(l => l.Id).Skip((page-1)*pageSize).Take(pageSize).ToList(),
+                Links = _repository.Query.OrderBy(l => l.Id).Skip((page - 1) * pageSize).Take(pageSize).ToList(),
                 Pagination = new PaginationViewModel
                 {
                     Action = RouteData.Values["Action"] as String,

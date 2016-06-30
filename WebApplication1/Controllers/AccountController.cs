@@ -13,6 +13,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly Repository<Participant> _repository;
@@ -24,12 +25,12 @@ namespace WebApplication1.Controllers
             _sha1Hasher = new Sha1Hasher();
         }
 
-        // GET: Logon
+       [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(AccountLoginViewModel viewModel)
         {
@@ -37,8 +38,11 @@ namespace WebApplication1.Controllers
             if (isValid)
             {
                 var isValidUser = Membership.ValidateUser(viewModel.Email, viewModel.Password);
-                FormsAuthentication.SetAuthCookie(viewModel.Email, viewModel.RememberMe);
-                return RedirectToAction("Index","Participants");
+                if (isValidUser)
+                {
+                    FormsAuthentication.SetAuthCookie(viewModel.Email, viewModel.RememberMe);
+                    return RedirectToAction("Index", "Participants");
+                }
             }
             return View(viewModel);
         }
@@ -49,11 +53,13 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Login");
         }
 
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Register(AccountRegisterViewModel viewModel)
         {
@@ -67,7 +73,7 @@ namespace WebApplication1.Controllers
             var isValid = ModelState.IsValid;
             if (isValid)
             {
-                var hashedPassword = _sha1Hasher.ComputeHash(viewModel);
+                var hashedPassword = _sha1Hasher.ComputeHash(viewModel.Participant.Password);
 
                 viewModel.Participant.Password = hashedPassword;
 
