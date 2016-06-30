@@ -13,8 +13,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly Repository<Participant> _repository;
         private readonly Sha1Hasher _sha1Hasher;

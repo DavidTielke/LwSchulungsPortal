@@ -11,8 +11,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize]
-    public class ParticipantsController : Controller
+    public class ParticipantsController : BaseController
     {
         private readonly Repository<Participant> _repository;
 

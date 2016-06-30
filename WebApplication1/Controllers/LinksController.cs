@@ -9,8 +9,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize]
-    public class LinksController : Controller
+    public class LinksController : BaseController
     {
         private readonly Repository<Link> _repository;
 
