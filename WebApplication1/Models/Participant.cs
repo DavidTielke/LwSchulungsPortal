@@ -66,7 +66,8 @@ namespace WebApplication1.Models
 
         public string ProfilePictureContentType { get; set; }
 
-        public ICollection<Link> CreatedLinks { get; set; }
+        public virtual ICollection<Link> CreatedLinks { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
 
         [UIHint("Password")]
         public string Password { get; set; }

@@ -18,10 +18,13 @@
         </th>
         <th>Kontakt</th>
         <th class="visible-lg visible-md">Firma</th>
-        <th>
-            <span class="hidden-xs">Optionen</span>
-            <span class="visible-xs">Opt.</span>
-        </th>
+        @if (IsInRole("Trainer"))
+        {
+            <th>
+                <span class="hidden-xs">Optionen</span>
+                <span class="visible-xs">Opt.</span>
+            </th>
+        }
     </tr>
 
     @foreach (var p in Model.Participants)
@@ -40,14 +43,17 @@
                 </a>
             </td>
             <td class="visible-lg visible-md">@p.Company</td>
-            <td>
-                <a href="@Url.Action("Update", "Participants", new {id = p.Id})">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </a>
-                <a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </td>
+            @if (IsInRole("Trainer"))
+            {
+                <td>
+                    <a href="@Url.Action("Update", "Participants", new {id = p.Id})">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Participants", new {id = p.Id})">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            }
         </tr>
     }
 

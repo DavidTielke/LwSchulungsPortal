@@ -37,12 +37,14 @@ namespace WebApplication1.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult Create()
         {
             var model = new Link();
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         [HttpPost]
         public ActionResult Create(Link model)
         {
@@ -51,7 +53,7 @@ namespace WebApplication1.Controllers
             {
                 var partiRepo = new Repository<Participant>();
                 var participant = partiRepo.Query.First();
-                model.CreatedBy = participant;
+                model.CreatedBy = new Participant {Id = 1};
                 model.CreatedAt = DateTime.Now;
                 _repository.Insert(model);
                 return RedirectToAction("Index");
@@ -59,12 +61,14 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult Update(int id)
         {
             var model = _repository.GetById(id);
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         [HttpPost]
         public ActionResult Update(Link model)
         {
@@ -77,12 +81,14 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult Delete(int id)
         {
             var model = _repository.GetById(id);
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult DeleteConfirmed(int id)
         {
             _repository.Delete(id);

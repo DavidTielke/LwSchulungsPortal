@@ -128,6 +128,7 @@
     <Compile Include="Controllers\LinksController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ParticipantsController.cs" />
+    <Compile Include="Data\Mappings\GroupMappings.cs" />
     <Compile Include="Data\Mappings\LinkMappings.cs" />
     <Compile Include="Data\Mappings\ParticipantsMappings.cs" />
     <Compile Include="Data\Repository.cs" />
@@ -139,7 +140,12 @@
     <Compile Include="Migrations\201606300948299_PasswordForPart.Designer.cs">
       <DependentUpon>201606300948299_PasswordForPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606301404504_Groups.cs" />
+    <Compile Include="Migrations\201606301404504_Groups.Designer.cs">
+      <DependentUpon>201606301404504_Groups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IIdentifyableEntity.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Participant.cs" />
@@ -195,6 +201,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606300948299_PasswordForPart.resx">
       <DependentUpon>201606300948299_PasswordForPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301404504_Groups.resx">
+      <DependentUpon>201606301404504_Groups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,5 +25,6 @@ namespace WebApplication1.Data
 
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Link> Links { get; set; }
+        public DbSet<Group> Groups { get; set; }
     }
 }

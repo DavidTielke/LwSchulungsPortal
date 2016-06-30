@@ -14,12 +14,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="@Url.Action("Index","Links")"><span class="glyphicon glyphicon-th-list"></span></a></li>
+                @if(IsInRole("Trainer"))
+                {
                 <li><a href="@Url.Action("Create", "Links")"><span class="glyphicon glyphicon-plus"></span></a></li>
-                @if (Model != 0)
+                if (Model != 0)
                 {
                     <li><a href="@Url.Action("Delete", "Links", new {id = Model})"><span class="glyphicon glyphicon-trash"></span></a></li>
 
                 }
+}
             </ul>
         </div>
     </div>

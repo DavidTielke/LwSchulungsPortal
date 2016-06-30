@@ -59,12 +59,14 @@ namespace WebApplication1.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "Trainer")]
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Trainer")]
         [HttpPost]
         public ActionResult Create(Participant model, HttpPostedFileBase upload)
         {
@@ -86,12 +88,14 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult Update(int id)
         {
             var participant = _repository.GetById(id);
             return View(participant);
         }
 
+        [Authorize(Roles = "Trainer")]
         [HttpPost]
         public ActionResult Update(Participant model, HttpPostedFileBase upload)
         {
@@ -113,12 +117,14 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult Delete(int id)
         {
             var model = _repository.GetById(id);
             return View(model);
         }
 
+        [Authorize(Roles = "Trainer")]
         public ActionResult DeleteConfirmed(int id)
         {
             _repository.Delete(id);

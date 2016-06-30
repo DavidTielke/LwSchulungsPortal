@@ -16,11 +16,14 @@
             <ul class="nav navbar-nav">
                 <li><a href="@Url.Action("Index","Participants")"><span class="glyphicon glyphicon-th-list"></span></a></li>
                 <li><a href="@Url.Action("CardIndex","Participants")"><span class="glyphicon glyphicon-th-large"></span></a></li>
-                <li><a href="@Url.Action("Create", "Participants")"><span class="glyphicon glyphicon-plus"></span></a></li>
-                @if (Model != 0)
+                @if (IsInRole("Trainer"))
                 {
-                    <li><a href="@Url.Action("Delete", "Participants", new {id = Model})"><span class="glyphicon glyphicon-trash"></span></a></li>
+                    <li><a href="@Url.Action("Create", "Participants")"><span class="glyphicon glyphicon-plus"></span></a></li>
+                    if (Model != 0)
+                     {
+                         <li><a href="@Url.Action("Delete", "Participants", new {id = Model})"><span class="glyphicon glyphicon-trash"></span></a></li>
 
+                     }
                 }
             </ul>
         </div>
