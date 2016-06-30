@@ -149,6 +149,9 @@
     <Compile Include="ViewModels\LinkIndexViewModel.cs" />
     <Compile Include="ViewModels\PaginationViewModel.cs" />
     <Compile Include="ViewModels\ParticipantsIndexViewModel.cs" />
+    <Compile Include="Views\MyViewPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
