@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LinksController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ParticipantsController.cs" />
     <Compile Include="Data\Mappings\LinkMappings.cs" />
     <Compile Include="Data\Mappings\ParticipantsMappings.cs" />
@@ -152,6 +153,8 @@
     <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountLoginViewModel.cs" />
+    <Compile Include="ViewModels\AccountRegisterViewModel.cs" />
     <Compile Include="ViewModels\LinkIndexViewModel.cs" />
     <Compile Include="ViewModels\PaginationViewModel.cs" />
     <Compile Include="ViewModels\ParticipantsIndexViewModel.cs" />
@@ -178,6 +181,11 @@
     <Content Include="Views\Links\Update.cshtml" />
     <Content Include="Views\Links\Delete.cshtml" />
     <Content Include="Views\Shared\LinksMenu.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Participants\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="fonts\Migrations\201606281435445_InitialCreate.resx">

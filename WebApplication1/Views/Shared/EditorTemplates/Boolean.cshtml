@@ -1,11 +1,10 @@
-﻿@model System.String
-<div class="form-group">
+﻿<div class="form-group">
     <div class="row">
         <div class="col-md-4">
             <label for="@Html.IdForModel()">@Html.DisplayNameForModel()</label>
         </div>
         <div class="col-md-8">
-            <input type="text" name="@Html.NameForModel()" id="@Html.IdForModel()" value="@Html.ValueForModel()" class="form-control" data-toggle="tooltip" data-placement="right" title="Tooltip on right" />
+            <input type="checkbox" name="@Html.NameForModel()" id="@Html.IdForModel()" value="@Html.ValueForModel()"/>
         </div>
     </div>
     <div class="text-danger">@Html.ValidationMessageFor(m => m)</div>

@@ -1,0 +1,15 @@
+﻿@model AccountRegisterViewModel
+
+@{
+    ViewBag.Title = "Registrieren";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<h1 style="margin-bottom: 30px; margin-top: 20px;">Registrieren</h1>
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.Email)
+    @Html.EditorFor(m => m.Password)
+    @Html.EditorFor(m => m.PasswordRepeat)
+    <button type="submit" name="submit" class="btn btn-primary btn-block" style="margin-top: 30px;">Registrieren</button>
+}

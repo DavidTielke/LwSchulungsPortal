@@ -1,0 +1,18 @@
+﻿@model AccountLoginViewModel
+@{
+    ViewBag.Title = "Anmeldung";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<img src="~/Content/noprofile.png" class="img-circle center-block" width="150" style="margin-bottom: 15px;" />
+<div class="alert alert-danger">
+    <a class="close" data-dismiss="alert" href="#">×</a>Ungültige Email oder Passwort!
+</div>
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.Email)
+    @Html.EditorFor(m => m.Password)
+    @Html.EditorFor(m => m.RememberMe)
+
+    <button type="submit" name="submit" class="btn btn-primary btn-block">Anmelden</button>
+}
