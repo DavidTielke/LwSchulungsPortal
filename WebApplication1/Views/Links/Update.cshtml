@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.Link
+
+@{
+    ViewBag.Title = "Link editieren";
+}
+
+
+@section ModuleMenu
+{
+    @Html.Partial("LinksMenu", Model.Id)
+}
+
+@using (Html.BeginForm())
+{
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div class="panel panel-danger">
+            <div class="panel-heading">Eingabefehler</div>
+            <div class="panel-body text-danger">
+                @Html.ValidationSummary(false)
+            </div>
+        </div>
+    }
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.CreatedAt)
+    @Html.HiddenFor(m => m.CreatedBy)
+
+    @Html.EditorFor(m => m.Name)
+    @Html.EditorFor(m => m.URL)
+    @Html.EditorFor(m => m.Description)
+
+    <div class="pull-right">
+        <a href="@Url.Action("Index")" class="btn btn-default">Abbrechen</a>
+        <input type="submit" value="Speichern" class="btn btn-primary" />
+    </div>
+}

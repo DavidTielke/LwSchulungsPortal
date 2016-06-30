@@ -21,8 +21,10 @@ namespace WebApplication1.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ParticipantsMappings());
+            modelBuilder.Configurations.Add(new LinkMappings());
         }
 
         public DbSet<Participant> Participants { get; set; }
+        public DbSet<Link> Links { get; set; }
     }
 }

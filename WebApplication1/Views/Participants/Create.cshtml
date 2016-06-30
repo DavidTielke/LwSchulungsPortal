@@ -28,16 +28,25 @@
             @Html.EditorFor(m => m.Lastname)
 
             <div class="form-group">
-                <label for="upload">Avatar: </label>
-                <input type="file" name="upload" id="upload"/>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <label for="upload">Avatar: </label>
+                    </div>
+                    <div class="col-xs-10">
+                        <input type="file" name="upload" id="upload" />
+                    </div>
+                </div>
             </div>
         </fieldset>
         <fieldset class="col-md-6">
             <legend>Geschäftlich</legend>
             @Html.EditorFor(m => m.Website)
-                        @Html.EditorFor(m => m.Company)
-                        @Html.EditorFor(m => m.Email)
+            @Html.EditorFor(m => m.Company)
+            @Html.EditorFor(m => m.Email)
         </fieldset>
     </div>
-    <input type="submit" value="Hinzufügen"/>
+    <div class="pull-right">
+        <a href="@Url.Action("Index")" class="btn btn-default">Abbrechen</a>
+        <input type="submit" value="Speichern" class="btn btn-primary" />
+    </div>
 }

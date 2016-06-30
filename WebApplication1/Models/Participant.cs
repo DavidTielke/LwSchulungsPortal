@@ -8,7 +8,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class Participant
+    public class Participant : IIdentifyableEntity
     {
         public Participant(int id, string firstname, string lastname, string email, string website, string company)
         {
@@ -65,5 +65,7 @@ namespace WebApplication1.Models
         public byte[] ProfilePicture { get; set; }
 
         public string ProfilePictureContentType { get; set; }
+
+        public ICollection<Link> CreatedLinks { get; set; }
     }
 }

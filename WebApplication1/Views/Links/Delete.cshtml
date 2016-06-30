@@ -1,0 +1,16 @@
+﻿@model WebApplication1.Models.Link
+
+@{
+    ViewBag.Title = "Link löschen";
+}
+
+@section ModuleMenu
+{
+    @Html.Partial("LinksMenu", Model.Id)
+}
+
+<div class="text-warning">Wollen Sie den Link @Model.Name wirklich löschen?</div>
+<div class="pull-right">
+    <a class="btn btn-default" href="@Url.Action("Index","Links")">Abbrechen</a>
+    <a class="btn btn-primary" href="@Url.Action("DeleteConfirmed","Links", new {id = Model.Id})">Löschen</a>
+</div>

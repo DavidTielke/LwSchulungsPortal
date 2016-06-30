@@ -14,11 +14,11 @@ namespace WebApplication1.Controllers
     // localhost.de/Participants/Delete
     public class ParticipantsController : Controller
     {
-        private readonly ParticipantsRepository _repository;
+        private readonly Repository<Participant> _repository;
 
         public ParticipantsController()
         {
-            _repository = new ParticipantsRepository();
+            _repository = new Repository<Participant>();
         }
 
         public ActionResult CardIndex(int page = 1)

@@ -1,6 +1,12 @@
 ﻿@model System.String
 <div class="form-group">
-    <label for="@Html.IdForModel()">@Html.DisplayNameForModel()</label>
-    <input type="text" name="@Html.NameForModel()" id="@Html.IdForModel()" value="@Html.ValueForModel()" class="form-control"  data-toggle="tooltip" data-placement="right" title="Tooltip on right"/>
+    <div class="row">
+        <div class="col-xs-2">
+            <label for="@Html.IdForModel()">@Html.DisplayNameForModel()</label>
+        </div>
+        <div class="col-xs-10">
+            <input type="text" name="@Html.NameForModel()" id="@Html.IdForModel()" value="@Html.ValueForModel()" class="form-control" data-toggle="tooltip" data-placement="right" title="Tooltip on right" />
+        </div>
+    </div>
     <div class="text-danger">@Html.ValidationMessageFor(m => m)</div>
 </div>

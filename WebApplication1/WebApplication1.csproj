@@ -122,28 +122,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LinksController.cs" />
     <Compile Include="Controllers\ParticipantsController.cs" />
+    <Compile Include="Data\Mappings\LinkMappings.cs" />
     <Compile Include="Data\Mappings\ParticipantsMappings.cs" />
-    <Compile Include="Data\ParticipantsRepository.cs" />
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\TpContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606281435445_InitialCreate.cs" />
-    <Compile Include="Migrations\201606281435445_InitialCreate.Designer.cs">
+    <Compile Include="fonts\Migrations\201606281435445_InitialCreate.cs" />
+    <Compile Include="fonts\Migrations\201606281435445_InitialCreate.Designer.cs">
       <DependentUpon>201606281435445_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606290714594_ProfilePictureAdded.cs" />
-    <Compile Include="Migrations\201606290714594_ProfilePictureAdded.Designer.cs">
+    <Compile Include="fonts\Migrations\201606290714594_ProfilePictureAdded.cs" />
+    <Compile Include="fonts\Migrations\201606290714594_ProfilePictureAdded.Designer.cs">
       <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.cs" />
-    <Compile Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.Designer.cs">
+    <Compile Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.cs" />
+    <Compile Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.Designer.cs">
       <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="fonts\Migrations\201606291421081_Links.cs" />
+    <Compile Include="fonts\Migrations\201606291421081_Links.Designer.cs">
+      <DependentUpon>201606291421081_Links.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fonts\Migrations\Configuration.cs" />
+    <Compile Include="Models\IIdentifyableEntity.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LinkIndexViewModel.cs" />
     <Compile Include="ViewModels\PaginationViewModel.cs" />
     <Compile Include="ViewModels\ParticipantsIndexViewModel.cs" />
   </ItemGroup>
@@ -164,6 +173,11 @@
     <Content Include="Views\Participants\CardIndex.cshtml" />
     <Content Include="Views\Shared\ParticipantsMenu.cshtml" />
     <Content Include="Views\Shared\Pagination.cshtml" />
+    <Content Include="Views\Links\Index.cshtml" />
+    <Content Include="Views\Links\Create.cshtml" />
+    <Content Include="Views\Links\Update.cshtml" />
+    <Content Include="Views\Links\Delete.cshtml" />
+    <Content Include="Views\Shared\LinksMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,17 +187,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Participants\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606281435445_InitialCreate.resx">
+    <EmbeddedResource Include="fonts\Migrations\201606281435445_InitialCreate.resx">
       <DependentUpon>201606281435445_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606290714594_ProfilePictureAdded.resx">
+    <EmbeddedResource Include="fonts\Migrations\201606290714594_ProfilePictureAdded.resx">
       <DependentUpon>201606290714594_ProfilePictureAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606290813423_ProfilePictureContentTypeAdded.resx">
+    <EmbeddedResource Include="fonts\Migrations\201606290813423_ProfilePictureContentTypeAdded.resx">
       <DependentUpon>201606290813423_ProfilePictureContentTypeAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fonts\Migrations\201606291421081_Links.resx">
+      <DependentUpon>201606291421081_Links.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
