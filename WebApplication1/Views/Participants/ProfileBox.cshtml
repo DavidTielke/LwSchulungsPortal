@@ -1,0 +1,9 @@
+﻿@model WebApplication1.Models.Participant
+
+@{
+    Layout = null;
+}
+
+<img src="@Url.Action("ProfileImage", "Participants", new {id = Model.Id})" class="img-rounded" width="150"/>
+<p>@Model.Firstname @Model.Lastname</p>
+<p>Profikl editieren</p>

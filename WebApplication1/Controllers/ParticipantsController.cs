@@ -142,5 +142,12 @@ namespace WebApplication1.Controllers
             }
             return File(profileImageData, participant.ProfilePictureContentType);
         }
+
+        [ChildActionOnly]
+        public ActionResult ProfileBox(int id)
+        {
+            var participant = _repository.GetById(id);
+            return View(participant);
+        }
     }
 }
